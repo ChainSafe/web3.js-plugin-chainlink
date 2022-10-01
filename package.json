@@ -23,8 +23,7 @@
 		"test": "jest --config=./test/unit/jest.config.js",
 		"test:ci": "jest --coverage=true --coverage-reporters=json --verbose",
 		"test:coverage": "jest --config=./test/unit/jest.config.js --coverage=true --coverage-reporters=text",
-		"test:unit": "jest --config=./test/unit/jest.config.js",
-		"test:watch": "npm test -- --watch"
+		"test:unit": "jest --config=./test/unit/jest.config.js"
 	},
 	"devDependencies": {
 		"@types/jest": "^28.1.6",
