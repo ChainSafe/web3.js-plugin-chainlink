@@ -1,0 +1,17 @@
+.eslintrc.json
+.eslintrc.js
+.gitignore
+.prettierrc.json
+.prettierignore
+*.log
+
+coverage/
+benchmark/
+.coverage/
+fixtures/
+tmp/
+logs/
+test/
+scripts/
+browsertest/
+examples/
