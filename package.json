@@ -11,18 +11,20 @@
 	"license": "LGPL-3.0",
 	"private": false,
 	"scripts": {
-		"clean": "rimraf dist",
-		"prebuild": "rimraf dist",
 		"build": "tsc --build",
 		"build:check": "node -e \"require('./dist')\"",
+		"clean": "rimraf dist",
+		"format": "prettier --write '**/*'",
 		"lint": "eslint --ext .js,.ts .",
 		"lint:fix": "eslint --fix --ext .js,.ts .",
-		"format": "prettier --write '**/*'",
+		"prebuild": "rimraf dist",
+		"prepare": "husky install",
+		"postinstall": "yarn build",
 		"test": "jest --config=./test/unit/jest.config.js",
-		"test:coverage": "jest --config=./test/unit/jest.config.js --coverage=true --coverage-reporters=text",
 		"test:ci": "jest --coverage=true --coverage-reporters=json --verbose",
-		"test:watch": "npm test -- --watch",
-		"test:unit": "jest --config=./test/unit/jest.config.js"
+		"test:coverage": "jest --config=./test/unit/jest.config.js --coverage=true --coverage-reporters=text",
+		"test:unit": "jest --config=./test/unit/jest.config.js",
+		"test:watch": "npm test -- --watch"
 	},
 	"devDependencies": {
 		"@types/jest": "^28.1.6",
