@@ -22,14 +22,7 @@ import { Address, Web3APISpec } from 'web3-types';
 import { Web3 } from 'web3';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
-
-type Price = {
-	roundId: string;
-	answer: string;
-	startedAt: string;
-	updatedAt: string;
-	answeredInRound: string;
-};
+import { Price } from './types';
 
 export class ChainlinkPlugin extends Web3PluginBase {
 	public pluginNamespace = 'chainlink';
@@ -41,11 +34,24 @@ export class ChainlinkPlugin extends Web3PluginBase {
 		this._contract = new Contract(abi, address);
 	}
 
+	/**
+	 * This method overrides the inherited `link` method from `Web3PluginBase`
+	 * to add to a configured `RequestManager` to our Contract instance
+	 * when `Web3.registerPlugin` is called.
+	 *
+	 * @param parentContext - The context to be added to the instance of `ChainlinkPlugin`,
+	 * and by extension, the instance of `Contract`.
+	 */
 	public link(parentContext: Web3Context<Web3APISpec>) {
 		super.link(parentContext);
 		this._contract.link(parentContext);
 	}
 
+	/**
+	 * Calls the `latestRoundData` method on a deployed `AggregatorV3` contracts.
+	 *
+	 * @returns A `Price` ({@link Price}) object from deployed `AggregatorV3` contract.
+	 */
 	public async getPrice() {
 		return this._contract.methods.latestRoundData().call() as unknown as Promise<Price>;
 	}
