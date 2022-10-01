@@ -4,7 +4,7 @@
 ![Node Version](https://img.shields.io/badge/node-14.x-green)
 [![NPM Package][npm-image]][npm-url]
 
-This is a Chainlink plugin implementation for [web3.js](https://github.com/web3/web3.js).
+This is a Chainlink plugin implementation for version `4.x` of [web3.js](https://github.com/web3/web3.js).
 
 ###### Get it from the NPM Registry
 
