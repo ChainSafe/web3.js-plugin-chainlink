@@ -2,8 +2,7 @@ import { ContractAbi } from 'web3-eth-abi';
 import Contract from 'web3-eth-contract';
 import { Web3Context, Web3PluginBase } from 'web3-core';
 import { Address, Web3APISpec } from 'web3-types';
-// @ts-expect-error 'Web3' is declared but its value is never read.
-import Web3 from 'web3';
+import 'web3';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
 import { Price } from './types';
