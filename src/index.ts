@@ -1,47 +1,57 @@
+import { Web3PluginBase } from 'web3-core';
 import { ContractAbi } from 'web3-eth-abi';
 import Contract from 'web3-eth-contract';
-import { Web3Context, Web3PluginBase } from 'web3-core';
-import { Address, Web3APISpec } from 'web3-types';
-import 'web3';
+import { Address } from 'web3-types';
+import { isAddress } from 'web3-validator';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
-import { Price } from './types';
+import { GoerliPriceFeeds, MainnetPriceFeeds } from './types';
 
 export class ChainlinkPlugin extends Web3PluginBase {
-	public pluginNamespace = 'chainlink';
+	public pluginNamespace: string;
+	public defaultAggregatorInterfaceAbi: ContractAbi;
 
-	protected readonly _contract: Contract<typeof AggregatorV3InterfaceABI>;
-
-	public constructor(abi: ContractAbi, address: Address) {
+	public constructor(options?: {
+		pluginNamespace?: string;
+		defaultAggregatorInterfaceAbi?: ContractAbi;
+	}) {
 		super();
-		this._contract = new Contract(abi, address);
+		this.pluginNamespace = options?.pluginNamespace ?? 'chainlink';
+		this.defaultAggregatorInterfaceAbi =
+			options?.defaultAggregatorInterfaceAbi ?? AggregatorV3InterfaceABI;
 	}
 
 	/**
-	 * This method overrides the inherited `link` method from `Web3PluginBase`
-	 * to add to a configured `RequestManager` to our Contract instance
-	 * when `Web3.registerPlugin` is called.
+	 * Calls the `latestRoundData` method on a deployed `aggregatorInterfaceAbi` contract.
 	 *
-	 * @param parentContext - The context to be added to the instance of `ChainlinkPlugin`,
-	 * and by extension, the instance of `Contract`.
+	 * @returns A `Price` object from deployed `aggregatorInterfaceAbi` contract.
 	 */
-	public link(parentContext: Web3Context<Web3APISpec>) {
-		super.link(parentContext);
-		this._contract.link(parentContext);
-	}
+	public async getPrice(
+		priceFeedAddress: MainnetPriceFeeds | GoerliPriceFeeds | Address,
+		aggregatorInterfaceAbi: ContractAbi = this.defaultAggregatorInterfaceAbi,
+	) {
+		if (!isAddress(priceFeedAddress)) {
+			throw new Error(
+				`Provided priceFeedAddress is not a valid address: ${priceFeedAddress}`,
+			);
+		}
 
-	/**
-	 * Calls the `latestRoundData` method on a deployed `AggregatorV3` contracts.
-	 *
-	 * @returns A `Price` ({@link Price}) object from deployed `AggregatorV3` contract.
-	 */
-	public async getPrice() {
-		return this._contract.methods.latestRoundData().call() as unknown as Promise<Price>;
-	}
-}
+		const _contract: Contract<typeof aggregatorInterfaceAbi> = new Contract(
+			aggregatorInterfaceAbi,
+			priceFeedAddress,
+		);
+		// TODO _contract inherits .link method from Web3Context, so not sure why
+		// TypeScript is saying the method doesn't exist
+		// @ts-expect-error Property 'link' does not exist on type 'Contract<ContractAbi>'
+		// Adds Web3Context to Contract instance
+		_contract.link(this);
 
-declare module 'web3' {
-	interface Web3 {
-		chainlink: ChainlinkPlugin;
+		if (_contract.methods.latestRoundData !== undefined) {
+			return _contract.methods.latestRoundData().call();
+		}
+
+		throw new Error(
+			'Unable to get price, provided aggregatorInterfaceAbi is missing latestRoundData method',
+		);
 	}
 }
