@@ -40,9 +40,7 @@ export class ChainlinkPlugin extends Web3PluginBase {
 			aggregatorInterfaceAbi,
 			priceFeedAddress,
 		);
-		// TODO _contract inherits .link method from Web3Context, so not sure why
-		// TypeScript is saying the method doesn't exist
-		// @ts-expect-error Property 'link' does not exist on type 'Contract<ContractAbi>'
+
 		// Adds Web3Context to Contract instance
 		_contract.link(this);
 
