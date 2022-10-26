@@ -1,16 +1,11 @@
-import { Web3Context } from 'web3-core/dist/web3_context';
-import { Web3Eth } from 'web3-eth/dist/web3_eth';
-
+import { Web3Context, Web3Eth } from '../web3_export_helper';
 import { ChainlinkPlugin } from '../../src/index';
 import { MainnetPriceFeeds } from '../../src/types';
 
-declare module 'web3-core' {
+declare module '../web3_export_helper' {
 	interface Web3Context {
 		chainlink: ChainlinkPlugin;
 	}
-}
-
-declare module 'web3-eth' {
 	interface Web3Eth {
 		chainlink: ChainlinkPlugin;
 	}
@@ -25,9 +20,6 @@ describe('ChainlinkPlugin Tests', () => {
 
 	it('should register ChainlinkPlugin plugin on Web3Eth instance', () => {
 		const web3Eth = new Web3Eth('http://127.0.0.1:8545');
-		// TODO Related to https://github.com/web3/web3.js/pull/5393#discussion_r985552292
-		// @ts-expect-error Property 'registerPlugin' does not exist on type 'Web3Eth'
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 		web3Eth.registerPlugin(new ChainlinkPlugin());
 		expect(web3Eth.chainlink).toBeDefined();
 	});
