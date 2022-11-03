@@ -1,3 +1,4 @@
+// The returned object when calling `latestRoundData` (https://docs.chain.link/docs/data-feeds/price-feeds/api-reference/#latestrounddata)
 export type Price = {
 	roundId: string;
 	answer: string;
@@ -6,7 +7,7 @@ export type Price = {
 	answeredInRound: string;
 };
 
-// Sourced from https://docs.chain.link/docs/data-feeds/price-feeds/addresses/?network=ethereum#Goerli%20Testnet
+// Sourced from https://docs.chain.link/docs/data-feeds/price-feeds/addresses/?network=ethereum#Ethereum%20Mainnet
 export enum MainnetPriceFeeds {
 	'1inchEth' = '0x72AFAECF99C9d9C8215fF44C77B94B99C28741e8',
 	'1inchUsd' = '0xc929ad75B72593967DE83E7F7Cda0493458261D9',
@@ -245,7 +246,7 @@ export enum MainnetPriceFeeds {
 	SusdUsd = '0xad35Bd71b9aFE6e4bDc266B345c198eaDEf9Ad94',
 }
 
-// Sourced from https://docs.chain.link/docs/data-feeds/price-feeds/addresses/?network=ethereum
+// Sourced from https://docs.chain.link/docs/data-feeds/price-feeds/addresses/?network=ethereum#Goerli%20Testnet
 export enum GoerliPriceFeeds {
 	BtcEth = '0x779877A7B0D9E8603169DdbD7836e478b4624789',
 	BtcUsd = '0xA39434A63A52E749F02807ae27335515BA4b07F7',
