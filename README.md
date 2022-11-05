@@ -18,13 +18,13 @@ You can install the package either using [npm](https://www.npmjs.com/package/web
 ### Using npm
 
 ```bash
-npm install web3
+npm install @chainsafe/web3.js-chainlink-plugin
 ```
 
 ### Using Yarn
 
 ```bash
-yarn add web3
+yarn add @chainsafe/web3.js-chainlink-plugin
 ```
 
 ## Found an issue or have a question or suggestion
@@ -34,7 +34,7 @@ yarn add web3
 
 ## Run the tests
 
-You may like to run the tests and examin their code to see how to use the plugin. And this would be also useful if you are a plugin writer.
+You may like to run the tests and examine their code to see how to use the plugin. And this would be also useful if you are a plugin writer.
 
 First clone the repo locally. And then:
 
