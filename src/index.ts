@@ -23,6 +23,7 @@ export class ChainlinkPlugin extends Web3PluginBase {
 
 	/**
 	 * Calls the `latestRoundData` method on a deployed `aggregatorInterfaceAbi` contract.
+	 * More information about `latestRoundData` could be found at https://docs.chain.link/docs/data-feeds/price-feeds/api-reference/#latestrounddata
 	 *
 	 * @returns A `Price` object from deployed `aggregatorInterfaceAbi` contract.
 	 */
