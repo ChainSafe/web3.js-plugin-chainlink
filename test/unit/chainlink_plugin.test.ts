@@ -1,15 +1,6 @@
-import { Web3Context, Web3Eth } from '../web3_export_helper';
-import { ChainlinkPlugin } from '../../src/index';
+import { Web3, Web3Context, Web3Eth } from '../../src/index';
+import { ChainlinkPlugin } from '../../src/chainlink_plugin';
 import { MainnetPriceFeeds } from '../../src/types';
-
-declare module '../web3_export_helper' {
-	interface Web3Context {
-		chainlink: ChainlinkPlugin;
-	}
-	interface Web3Eth {
-		chainlink: ChainlinkPlugin;
-	}
-}
 
 describe('ChainlinkPlugin Tests', () => {
 	it('should register ChainlinkPlugin plugin on Web3Context instance', () => {
@@ -27,10 +18,10 @@ describe('ChainlinkPlugin Tests', () => {
 	describe('ChainlinkPlugin method tests', () => {
 		const requestManagerSendSpy = jest.fn();
 
-		let web3Context: Web3Context;
+		let web3Context: Web3;
 
 		beforeAll(() => {
-			web3Context = new Web3Context('http://127.0.0.1:8545');
+			web3Context = new Web3('http://127.0.0.1:8545');
 			web3Context.registerPlugin(new ChainlinkPlugin());
 			web3Context.chainlink.requestManager.send = requestManagerSendSpy;
 		});
