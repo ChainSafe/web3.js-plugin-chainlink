@@ -31,15 +31,15 @@ yarn add @chainsafe/web3.js-chainlink-plugin
 
 You can use this plugin to get the price of token-pairs from a Chainlink smart contract.
 
-And here is a code snippet that get the Price of the pair `Link/Eth` from the Ethereum mainnet.
-However, if you are connected to another Ethereum network other than the mainnet, or you would like to get the price of another pair, replace `MainnetPriceFeeds.LinkEth`, in the code below, with the address of the intended Chainlink smart contract that is deployed on the network that you are connected to. And you may check https://docs.chain.link/docs/data-feeds/price-feeds/addresses/ for the most updated mainnet and testnet addresses.
+Following is a code snippet for getting the Price of the pair `Link/Eth` from the Ethereum mainnet.
+However, if you are connected to another Ethereum network other than the mainnet, or you would like to get the price of another pair, replace `MainnetPriceFeeds.LinkEth`, in the code below, with the address of the intended Chainlink smart contract that is deployed on the network that you are connected to, and you may check https://docs.chain.link/docs/data-feeds/price-feeds/addresses/ for the most updated mainnet and testnet addresses.
 
 ```typescript
 import { ChainlinkPlugin, MainnetPriceFeeds } from '@chainsafe/web3.js-chainlink-plugin';
 
 import Web3 from 'web3';
 
-const web3 = new Web3('YOUR_ETHEREUM_NODE'); // Use a node connectd to mainnet, if you will keep using `MainnetPriceFeeds.LinkEth` bellow.
+const web3 = new Web3('YOUR_ETHEREUM_NODE'); // Use a node connected to mainnet, if you will keep using `MainnetPriceFeeds.LinkEth` below.
 
 const chainlinkPlugin = new ChainlinkPlugin();
 
