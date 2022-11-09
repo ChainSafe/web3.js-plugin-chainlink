@@ -5,7 +5,8 @@ import { Address } from 'web3-types';
 import { isAddress } from 'web3-validator';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
-import { Web3, Web3Context, Web3Eth } from './reexported_web3_objects';
+// @ts-expect-error All imports in import declaration are unused
+import { Web3Context } from './reexported_web3_context';
 import { GoerliPriceFeeds, MainnetPriceFeeds } from './types';
 
 export class ChainlinkPlugin extends Web3PluginBase {
@@ -57,18 +58,8 @@ export class ChainlinkPlugin extends Web3PluginBase {
 }
 
 // Module Augmentation
-declare module './reexported_web3_objects' {
+declare module './reexported_web3_context' {
 	interface Web3Context {
 		chainlink: ChainlinkPlugin;
 	}
-
-	interface Web3Eth {
-		chainlink: ChainlinkPlugin;
-	}
-
-	interface Web {
-		chainlink: ChainlinkPlugin;
-	}
 }
-
-export { Web3, Web3Context, Web3Eth };
