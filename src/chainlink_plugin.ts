@@ -5,7 +5,6 @@ import { Address } from 'web3-types';
 import { isAddress } from 'web3-validator';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
-// @ts-expect-error All imports in import declaration are unused
 import { Web3Context } from './reexported_web3_context';
 import { GoerliPriceFeeds, MainnetPriceFeeds } from './types';
 
