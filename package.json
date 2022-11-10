@@ -19,7 +19,6 @@
 		"lint:fix": "eslint --fix --ext .js,.ts .",
 		"prebuild": "rimraf dist",
 		"prepare": "husky install",
-		"postinstall": "yarn build",
 		"test": "jest --config=./test/unit/jest.config.js",
 		"test:ci": "jest --coverage=true --coverage-reporters=json --verbose",
 		"test:coverage": "jest --config=./test/unit/jest.config.js --coverage=true --coverage-reporters=text",
