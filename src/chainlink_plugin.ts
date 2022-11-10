@@ -63,3 +63,5 @@ declare module './reexported_web3_context' {
 		chainlink: ChainlinkPlugin;
 	}
 }
+
+export { Web3Context };
