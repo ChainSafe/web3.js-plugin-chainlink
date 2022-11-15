@@ -16,10 +16,6 @@
 			"syntaxKind": "inline",
 			"allowMultiple": true
 		},
-
-		// TODO: When following fix is released we can replace below configuration with `extend`
-		// https://github.com/TypeStrong/typedoc/issues/2015
-		// 	"extends": ["typedoc/tsdoc.json"],
 		{
 			"tagName": "@module",
 			"syntaxKind": "block"
