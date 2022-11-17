@@ -27,12 +27,15 @@
 		"test:unit": "jest --config=./test/unit/jest.config.js"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.20.2",
+		"@babel/preset-env": "^7.20.2",
 		"@cypress/webpack-preprocessor": "^5.15.5",
 		"@types/jest": "^28.1.6",
 		"@types/node": "^18.7.23",
 		"@typescript-eslint/eslint-plugin": "^5.30.7",
 		"@typescript-eslint/parser": "^5.30.7",
 		"assert": "^2.0.0",
+		"babel-loader": "^9.1.0",
 		"crypto-browserify": "^3.12.0",
 		"cypress": "^11.1.0",
 		"cypress-jest-adapter": "^0.1.1",
@@ -67,9 +70,9 @@
 	},
 	"peerDependencies": {
 		"web3-core": ">= 4.0.1-alpha.0 < 5",
+		"web3-eth": ">= 4.0.1-alpha.0 < 5",
 		"web3-eth-abi": ">= 4.0.1-alpha.0 < 5",
 		"web3-eth-contract": ">= 4.0.1-alpha.0 < 5",
-		"web3-types": ">= 0.1.1-alpha.0 < 5",
-		"web3-validator": ">= 0.1.1-alpha.0 < 5"
+		"web3-types": ">= 0.1.1-alpha.0 < 5"
 	}
 }
