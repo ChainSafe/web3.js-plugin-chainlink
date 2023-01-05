@@ -21,13 +21,5 @@ const webpackOptions = require('../webpack.config.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
 	on('file:preprocessor', webpackPreprocessor({ webpackOptions }));
-
-	// config.env.WEB3_SYSTEM_TEST_ENV = process.env.WEB3_SYSTEM_TEST_ENV;
-	// config.env.WEB3_SYSTEM_TEST_BACKEND = process.env.WEB3_SYSTEM_TEST_BACKEND;
-	// config.env.WEB3_SYSTEM_TEST_MNEMONIC = process.env.WEB3_SYSTEM_TEST_MNEMONIC;
-	// config.env.WEB3_SYSTEM_TEST_PORT = process.env.WEB3_SYSTEM_TEST_PORT;
-	// config.env.WEB3_SYSTEM_TEST_PROVIDER = process.env.WEB3_SYSTEM_TEST_PROVIDER;
-	// config.env.WEB3_SYSTEM_TEST_ENGINE = process.env.WEB3_SYSTEM_TEST_ENGINE;
-
 	return config;
 };
