@@ -20,17 +20,26 @@ describe('ChainlinkPlugin Tests', () => {
 
 	describe('ChainlinkPlugin method tests', () => {
 		let web3Context: Web3;
+		let requestManagerSendSpy: jest.SpyInstance;
 
 		beforeAll(() => {
-			web3Context = new Web3('http://127.0.0.1:8545');
+			web3Context = new Web3('https://rpc.ankr.com/eth');
 			web3Context.registerPlugin(new ChainlinkPlugin());
-			web3Context.chainlink.requestManager.send = jest.fn();
+			requestManagerSendSpy = jest.spyOn(web3Context.chainlink.requestManager, 'send');
 		});
 
 		it('should call ChainlinkPlugin.getPrice with expected RPC object', async () => {
-			await web3Context.chainlink.getPrice(MainnetPriceFeeds.LinkEth);
-			// eslint-disable-next-line @typescript-eslint/unbound-method
-			expect(web3Context.chainlink.requestManager.send).toHaveBeenCalledWith({
+			const result = await web3Context.chainlink.getPrice(MainnetPriceFeeds.LinkEth);
+			expect(Object.keys(result as object)).toEqual(
+				expect.arrayContaining([
+					'roundId',
+					'answer',
+					'startedAt',
+					'updatedAt',
+					'answeredInRound',
+				]),
+			);
+			expect(requestManagerSendSpy).toHaveBeenCalledWith({
 				method: 'eth_call',
 				params: [{ data: '0xfeaf968c', to: MainnetPriceFeeds.LinkEth }, 'latest'],
 			});
