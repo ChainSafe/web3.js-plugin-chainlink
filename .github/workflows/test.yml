@@ -1,7 +1,8 @@
 name: Test
 on:
     workflow_run:
-        workflows: ['Build']
+        workflows:
+            - Build
         types:
             - completed
     pull_request:
@@ -11,6 +12,7 @@ on:
             - opened
             - reopened
             - synchronize
+    workflow_dispatch:
 jobs:
     unit:
         name: Unit Tests
