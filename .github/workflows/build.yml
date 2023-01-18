@@ -9,12 +9,12 @@ on:
             - synchronize
 jobs:
     build:
+        name: Build TSC
         strategy:
             matrix:
                 node:
                     - 14
                     - 16
-        name: Build Plugin
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -32,7 +32,7 @@ jobs:
                   name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
                   path: '/tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz'
     build-web:
-        name: Build Web
+        name: Build Webpack
         needs: build
         runs-on: ubuntu-latest
         strategy:
