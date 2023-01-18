@@ -31,6 +31,12 @@ jobs:
               with:
                   name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
                   path: '/tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+            - uses: actions/cache/save@v3
+              with:
+                path: |
+                    ~/.cache/Cypress
+                    node_modules
+                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
     build-web:
         name: Build Webpack
         needs: build
@@ -92,6 +98,12 @@ jobs:
                 name: chainlink-plugin-16.js.tar.gz
                 path: /tmp
             - run: tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./
+            - uses: actions/cache@v2
+              with:
+                path: |
+                    ~/.cache/Cypress
+                    node_modules
+                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
             - run: corepack enable
             - name: Cypress run
               uses: cypress-io/github-action@v5
