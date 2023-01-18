@@ -1,17 +1,71 @@
 name: Test
 on:
-    workflow_run:
-        workflows: ['Build']
+    pull_request:
+        branches:
+            - master
         types:
-            - completed
-        pull_request:
-            branches:
-                - master
-            types:
-                - opened
-                - reopened
-                - synchronize
+            - opened
+            - reopened
+            - synchronize
 jobs:
+    build:
+        name: Build TSC
+        strategy:
+            matrix:
+                node:
+                    - 14
+                    - 16
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: '${{ matrix.node }}'
+                  cache: yarn
+            - run: corepack enable
+            - run: yarn install
+            - run: >-
+                  tar -czf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz
+                  --exclude="./.git" ./
+            - uses: actions/upload-artifact@v3
+              with:
+                  name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+                  path: '/tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+            - uses: actions/cache/save@v3
+              with:
+                path: |
+                    ~/.cache/Cypress
+                    node_modules
+                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+    build-web:
+        name: Build Webpack
+        needs: build
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node:
+                    - 14
+                    - 16
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                  name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+                  path: /tmp
+            - run: corepack enable
+            - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
+            - run: 'yarn build:web'
+    lint:
+        name: lint
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                  name: chainlink-plugin-14.js.tar.gz
+                  path: /tmp
+            - run: corepack enable
+            - run: tar -xf /tmp/chainlink-plugin-14.js.tar.gz -C ./
+            - run: yarn lint
     unit:
         name: Unit Tests
         needs: build
@@ -29,3 +83,31 @@ jobs:
             - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
             - run: corepack enable
             - run: 'yarn test:unit'
+    browser-tests:
+        name: Browser Tests
+        needs: build
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                browser: ['electron', 'chrome', 'firefox']
+        steps:
+            - uses: browser-actions/setup-firefox@latest
+              if: matrix.browser == 'firefox'
+            - uses: actions/download-artifact@v3
+              with:
+                name: chainlink-plugin-16.js.tar.gz
+                path: /tmp
+            - run: tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./
+            - uses: actions/cache@v2
+              with:
+                path: |
+                    ~/.cache/Cypress
+                    node_modules
+                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+            - run: corepack enable
+            - name: Cypress run
+              uses: cypress-io/github-action@v5
+              with:
+                  install: false
+                  command: 'yarn run test:e2e:${{ matrix.browser }}'
+                  cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
