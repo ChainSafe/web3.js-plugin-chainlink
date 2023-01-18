@@ -88,9 +88,9 @@ jobs:
             - uses: browser-actions/setup-firefox@latest
               if: matrix.browser == 'firefox'
             - run: corepack enable
-            - run: yarn install cypress
+            - run: yarn install
             - name: Cypress run
-              uses: cypress-io/github-action@v5
+              uses: cypress-io/github-action@v4
               with:
                   install: false
                   browser: ${{ matrix.browser }}
