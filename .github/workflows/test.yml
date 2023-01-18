@@ -23,7 +23,7 @@ jobs:
                   node-version: '${{ matrix.node }}'
                   cache: yarn
             - run: corepack enable
-            - run: yarn install --frozen-lockfile
+            - run: yarn install
             - run: >-
                   tar -czf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz
                   --exclude="./.git" ./
@@ -88,12 +88,9 @@ jobs:
             - uses: browser-actions/setup-firefox@latest
               if: matrix.browser == 'firefox'
             - run: corepack enable
-            # - run: npm install --no-package-lock --no-save --force cypress
-            - run: yarn install --frozen-lockfile
             - name: Cypress run
               uses: cypress-io/github-action@v4
               with:
-                  install: false
                   browser: matrix.browser
                   command: 'yarn test:e2e:${{ matrix.browser }}'
                   cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
