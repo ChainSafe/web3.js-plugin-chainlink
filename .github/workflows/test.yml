@@ -94,3 +94,4 @@ jobs:
               with:
                   browser: matrix.browser
                   command: 'yarn test:e2e:${{ matrix.browser }}'
+                  cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
