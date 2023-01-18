@@ -23,7 +23,7 @@ jobs:
                   node-version: '${{ matrix.node }}'
                   cache: yarn
             - run: corepack enable
-            - run: yarn
+            - run: yarn install --frozen-lockfile
             - run: >-
                   tar -czf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz
                   --exclude="./.git" ./
