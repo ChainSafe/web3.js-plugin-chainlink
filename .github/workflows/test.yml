@@ -48,13 +48,6 @@ jobs:
             - run: corepack enable
             - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
             - run: 'yarn build:web'
-            - run: >-
-                  tar -czf /tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz
-                  --exclude="./.git" ./
-            - uses: actions/upload-artifact@v3
-              with:
-                  name: 'chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
-                  path: '/tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
     lint:
         name: lint
         needs: build
@@ -86,7 +79,7 @@ jobs:
             - run: 'yarn test:unit'
     browser-tests:
         name: Browser Tests
-        needs: build-web
+        needs: build
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -96,9 +89,9 @@ jobs:
               if: matrix.browser == 'firefox'
             - uses: actions/download-artifact@v3
               with:
-                  name: 'chainlink-plugin-webpack-16.js.tar.gz'
+                  name: 'chainlink-plugin-16.js.tar.gz'
                   path: /tmp
-            - run: 'tar -xf /tmp/chainlink-plugin-webpack-16.js.tar.gz -C ./'
+            - run: 'tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./'
             - run: corepack enable
             - run: npm install --no-package-lock --no-save --force cypress
             - uses: cypress-io/github-action@v4
