@@ -11,6 +11,7 @@ on:
                 - opened
                 - reopened
                 - synchronize
+    workflow_dispatch:
 jobs:
     unit:
         name: Unit Tests
