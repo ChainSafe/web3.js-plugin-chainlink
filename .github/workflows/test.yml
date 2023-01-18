@@ -90,8 +90,7 @@ jobs:
             - run: corepack enable
             - run: yarn install
             - name: Cypress run
-              uses: cypress-io/github-action@v4
+              uses: cypress-io/github-action@v5
               with:
                   browser: matrix.browser
                   command: 'yarn test:e2e:${{ matrix.browser }}'
-                  cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
