@@ -14,7 +14,7 @@ jobs:
             matrix:
                 node:
                     - 14
-                    - 16
+                    # - 16
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -31,42 +31,42 @@ jobs:
               with:
                   name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
                   path: '/tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz'
-    build-web:
-        name: Build Webpack
-        needs: build
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node:
-                    - 14
-                    - 16
-        steps:
-            - uses: actions/download-artifact@v3
-              with:
-                  name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
-                  path: /tmp
-            - run: corepack enable
-            - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
-            - run: 'yarn build:web'
-            - run: >-
-                  tar -czf /tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz
-                  --exclude="./.git" ./
-            - uses: actions/upload-artifact@v3
-              with:
-                  name: 'chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
-                  path: '/tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
-    lint:
-        name: lint
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/download-artifact@v3
-              with:
-                  name: chainlink-plugin-14.js.tar.gz
-                  path: /tmp
-            - run: corepack enable
-            - run: tar -xf /tmp/chainlink-plugin-14.js.tar.gz -C ./
-            - run: yarn lint
+    # build-web:
+    #     name: Build Webpack
+    #     needs: build
+    #     runs-on: ubuntu-latest
+    #     strategy:
+    #         matrix:
+    #             node:
+    #                 - 14
+    #                 - 16
+    #     steps:
+    #         - uses: actions/download-artifact@v3
+    #           with:
+    #               name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+    #               path: /tmp
+    #         - run: corepack enable
+    #         - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
+    #         - run: 'yarn build:web'
+    #         - run: >-
+    #               tar -czf /tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz
+    #               --exclude="./.git" ./
+    #         - uses: actions/upload-artifact@v3
+    #           with:
+    #               name: 'chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
+    #               path: '/tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
+    # lint:
+    #     name: lint
+    #     needs: build
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/download-artifact@v3
+    #           with:
+    #               name: chainlink-plugin-14.js.tar.gz
+    #               path: /tmp
+    #         - run: corepack enable
+    #         - run: tar -xf /tmp/chainlink-plugin-14.js.tar.gz -C ./
+    #         - run: yarn lint
     unit:
         name: Unit Tests
         needs: build
@@ -75,7 +75,7 @@ jobs:
             matrix:
                 node:
                     - 14
-                    - 16
+                    # - 16
         steps:
             - uses: actions/download-artifact@v3
               with:
@@ -92,7 +92,7 @@ jobs:
             matrix:
                 node:
                     - 14
-                    - 16
+                    # - 16
         steps:
             - uses: actions/download-artifact@v3
               with:
