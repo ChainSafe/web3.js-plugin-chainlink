@@ -1,7 +1,8 @@
 name: Test
 on:
     workflow_run:
-        workflows: ['Build']
+        workflows:
+            - Build
         types:
             - completed
 jobs:
@@ -14,6 +15,9 @@ jobs:
                     - 14
                     - 16
         steps:
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.workflow_run.head_branch }}
             - uses: actions/download-artifact@v3
               with:
                   name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
