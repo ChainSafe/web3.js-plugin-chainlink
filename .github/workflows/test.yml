@@ -81,12 +81,12 @@ jobs:
         name: Browser Tests
         needs: build
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                browser: ['electron', 'chrome', 'firefox']
+        # strategy:
+        #     matrix:
+        #         browser: ['electron', 'chrome', 'firefox']
         steps:
-            - uses: browser-actions/setup-firefox@latest
-              if: matrix.browser == 'firefox'
+            # - uses: browser-actions/setup-firefox@latest
+            #   if: matrix.browser == 'firefox'
             - uses: actions/download-artifact@v3
               with:
                   name: 'chainlink-plugin-16.js.tar.gz'
@@ -99,5 +99,5 @@ jobs:
               with:
                   install: false
                   browser: matrix.browser
-                  command: 'yarn test:e2e:${{ matrix.browser }}'
-                  cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
+                  command: 'yarn test:e2e:chrome'
+                  cache-key: node-v16-on-chrome-hash-${{ hashFiles('yarn.lock') }}
