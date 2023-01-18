@@ -1,0 +1,24 @@
+name: Test
+on:
+    workflow_run:
+        workflows:
+            - Build
+        types:
+            - completed
+jobs:
+    unit:
+        name: Unit Tests
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node:
+                    - 14
+                    - 16
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                  name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+                  path: /tmp
+            - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
+            - run: corepack enable
+            - run: 'yarn test:unit'
