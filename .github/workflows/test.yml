@@ -4,6 +4,8 @@ on:
         workflows: ['Build']
         types:
             - completed
+        branches:
+          - *
         pull_request:
             branches:
                 - master
@@ -11,7 +13,6 @@ on:
                 - opened
                 - reopened
                 - synchronize
-    workflow_dispatch:
 jobs:
     unit:
         name: Unit Tests
