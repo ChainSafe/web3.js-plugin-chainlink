@@ -87,12 +87,15 @@ jobs:
         steps:
             - uses: browser-actions/setup-firefox@latest
               if: matrix.browser == 'firefox'
+            - uses: actions/download-artifact@v3
+              with:
+                name: chainlink-plugin-16.js.tar.gz
+                path: /tmp
+            - run: tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./
             - run: corepack enable
-            - run: yarn install
             - name: Cypress run
-              uses: cypress-io/github-action@v4
+              uses: cypress-io/github-action@v5
               with:
                   install: false
-                  browser: ${{ matrix.browser }}
-                  command: 'yarn test:e2e:${{ matrix.browser }}'
+                  command: 'yarn run test:e2e:${{ matrix.browser }}'
                   cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
