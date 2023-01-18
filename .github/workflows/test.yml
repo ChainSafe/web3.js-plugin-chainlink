@@ -90,18 +90,17 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node:
-                    - 16
                 browser: ['electron', 'chrome', 'firefox']
         steps:
             - uses: browser-actions/setup-firefox@latest
               if: matrix.browser == 'firefox'
             - uses: actions/download-artifact@v3
               with:
-                  name: 'chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz'
+                  name: 'chainlink-plugin-webpack-16.js.tar.gz'
                   path: /tmp
-            - run: 'tar -xf /tmp/chainlink-plugin-webpack-${{ matrix.node }}.js.tar.gz -C ./'
+            - run: 'tar -xf /tmp/chainlink-plugin-webpack-16.js.tar.gz -C ./'
             - run: corepack enable
+            - run: npm install --no-package-lock --no-save --force cypress
             - uses: cypress-io/github-action@v5
               with:
                   install: false
