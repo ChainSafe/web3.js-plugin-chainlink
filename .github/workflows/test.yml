@@ -92,6 +92,6 @@ jobs:
             - name: Cypress run
               uses: cypress-io/github-action@v5
               with:
-                  browser: matrix.browser
+                  browser: ${{ matrix.browser }}
                   command: 'yarn test:e2e:${{ matrix.browser }}'
                   cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
