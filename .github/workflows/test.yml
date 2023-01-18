@@ -98,3 +98,4 @@ jobs:
                   install: false
                   browser: matrix.browser
                   command: 'yarn test:e2e:${{ matrix.browser }}'
+                  cache-key: node-v${{ matrix.node }}-on-16-hash-${{ hashFiles('yarn.lock') }}
