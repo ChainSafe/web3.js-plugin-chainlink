@@ -89,6 +89,7 @@ jobs:
               if: matrix.browser == 'firefox'
             - run: corepack enable
             - run: yarn install
+            - run: npm install --no-package-lock --no-save --force cypress
             - name: Cypress run
               uses: cypress-io/github-action@v5
               with:
