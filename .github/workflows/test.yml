@@ -101,7 +101,7 @@ jobs:
             - run: 'tar -xf /tmp/chainlink-plugin-webpack-16.js.tar.gz -C ./'
             - run: corepack enable
             - run: npm install --no-package-lock --no-save --force cypress
-            - uses: cypress-io/github-action@v5
+            - uses: cypress-io/github-action@v4
               with:
                   install: false
                   browser: matrix.browser
