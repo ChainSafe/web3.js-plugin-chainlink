@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
+	mode: 'development',
 	resolve: {
 		extensions: ['.ts', '.js'],
 	},
@@ -8,7 +9,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.ts$/,
-				exclude: [/node_modules/, __dirname + 'test/black_box/'],
+				exclude: [/node_modules/],
 				use: [
 					{
 						loader: 'ts-loader',

@@ -68,7 +68,7 @@ startBackgroundAndPublish() {
 runTests() {
     cd test/black_box
     yarn --update-checksums
-    YARN_REGISTRY="http://localhost:4873" yarn install
+    yarn install
     yarn test
 }
 

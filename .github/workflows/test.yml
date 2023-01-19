@@ -35,8 +35,7 @@ jobs:
               with:
                   path: |
                       ~/.cache/Cypress
-                      node_modules
-                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
     build-web:
         name: Build Webpack
         needs: build
@@ -102,8 +101,7 @@ jobs:
               with:
                   path: |
                       ~/.cache/Cypress
-                      node_modules
-                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
             - run: corepack enable
             - name: Cypress run
               uses: cypress-io/github-action@v5
@@ -116,7 +114,6 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         strategy:
-            fail-fast: false
             matrix:
                 node:
                     - 16

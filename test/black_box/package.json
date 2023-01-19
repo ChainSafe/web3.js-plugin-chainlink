@@ -8,7 +8,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"@chainsafe/web3.js-chainlink-plugin": "9.9.9"
+		"@chainsafe/web3.js-chainlink-plugin": "^9.9.9"
 	},
 	"devDependencies": {
 		"jest": "^28.1.3",

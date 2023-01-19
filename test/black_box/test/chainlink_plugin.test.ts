@@ -1,6 +1,9 @@
 import Web3 from 'web3';
 import { Web3Context } from 'web3-core';
 import Web3Eth from 'web3-eth';
+
+// https://github.com/ChainSafe/web3.js-plugin-chainlink/issues/15
+// @ts-ignore
 import { ChainlinkPlugin, MainnetPriceFeeds } from '@chainsafe/web3.js-chainlink-plugin';
 
 describe('ChainlinkPlugin Tests', () => {
