@@ -8,7 +8,7 @@ const config = {
 			return require('./cypress/plugins/index.js')(on, config);
 		},
 		specPattern: 'test/e2e/**/**/*.test.ts',
-		excludeSpecPattern: ['**/contract_defaults_extra.test.ts'],
+		excludeSpecPattern: ['test/black_box/**'],
 	},
 };
 

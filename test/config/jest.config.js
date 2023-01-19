@@ -8,6 +8,7 @@ module.exports = {
 	},
 	rootDir: '../..',
 	testMatch: ['<rootDir>/test/**/?(*.)+(spec|test).+(ts|tsx|js)'],
+	testPathIgnorePatterns: ['<rootDir>/test/black_box'],
 	setupFilesAfterEnv: ['<rootDir>/test/config/setup.js'],
 	transform: {
 		'^.+\\.(ts|tsx)$': 'ts-jest',

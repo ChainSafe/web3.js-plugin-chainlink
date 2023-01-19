@@ -1,6 +1,8 @@
+lib
 dist
 jest.config.js
 webpack.config.js
 .eslintrc.js
 cypress
 cypress.config.js
+test/black_box
