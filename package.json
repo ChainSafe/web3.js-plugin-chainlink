@@ -1,6 +1,6 @@
 {
 	"name": "@chainsafe/web3.js-chainlink-plugin",
-	"version": "9.9.9",
+	"version": "0.1.0",
 	"description": "A Web3.js 4.x Plugin for Interacting With Chainlink Smart Contracts",
 	"main": "lib/index.js",
 	"repository": {
