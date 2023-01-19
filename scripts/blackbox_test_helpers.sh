@@ -44,7 +44,8 @@ loginNPMUser() {
 
 yarnPublish() {
     yarn publish \
-        lib \
+        --new-version 9.9.9 \
+        --no-git-tag-version \
         --tag blackbox \
         --registry http://localhost:4873
 }
@@ -56,7 +57,8 @@ publish() {
 
     createVerdaccioNPMUser
     loginNPMUser
-    lernaPublish
+    yarn build
+    yarnPublish
 }
 
 startBackgroundAndPublish() {
