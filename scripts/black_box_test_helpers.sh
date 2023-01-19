@@ -3,7 +3,7 @@
 ORIGARGS=("$@")
 
 helpFunction() {
-	echo "Usage: $0 [start|stop|startBackgroundAndPublish] [background]"
+	echo "Usage: $0 [start|stop|startBackgroundAndPublish|runTests] [background]"
 	exit 1 # Exit script after printing help
 }
 
@@ -65,9 +65,17 @@ startBackgroundAndPublish() {
     startBackground && publish
 }
 
+runTests() {
+    cd test/black_box
+    yarn --update-checksums
+    YARN_REGISTRY="http://localhost:4873" yarn install
+    yarn test
+}
+
 case $1 in
 start) start ;;
 stop) stop ;;
 startBackgroundAndPublish) startBackgroundAndPublish ;;
+runTests) runTests ;;
 *) helpFunction ;; # Print helpFunction in case parameter is non-existent
 esac
