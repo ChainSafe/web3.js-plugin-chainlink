@@ -36,3 +36,4 @@ tsconfig.tsbuildinfo
 package-lock.json
 
 tmp/
+.npmrc
