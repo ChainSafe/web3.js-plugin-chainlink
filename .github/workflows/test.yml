@@ -33,10 +33,10 @@ jobs:
                   path: '/tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz'
             - uses: actions/cache/save@v3
               with:
-                path: |
-                    ~/.cache/Cypress
-                    node_modules
-                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+                  path: |
+                      ~/.cache/Cypress
+                      node_modules
+                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
     build-web:
         name: Build Webpack
         needs: build
@@ -95,15 +95,15 @@ jobs:
               if: matrix.browser == 'firefox'
             - uses: actions/download-artifact@v3
               with:
-                name: chainlink-plugin-16.js.tar.gz
-                path: /tmp
+                  name: chainlink-plugin-16.js.tar.gz
+                  path: /tmp
             - run: tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./
             - uses: actions/cache@v2
               with:
-                path: |
-                    ~/.cache/Cypress
-                    node_modules
-                key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
+                  path: |
+                      ~/.cache/Cypress
+                      node_modules
+                  key: cypress-${{ runner.os }}-${{ hashFiles('yarn-lock.json') }}
             - run: corepack enable
             - name: Cypress run
               uses: cypress-io/github-action@v5
@@ -111,3 +111,21 @@ jobs:
                   install: false
                   command: 'yarn run test:e2e:${{ matrix.browser }}'
                   cache-key: node-v16-on-${{ matrix.browser }}-hash-${{ hashFiles('yarn.lock') }}
+    black-box:
+        name: Black Box Tests
+        needs: build
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node:
+                    - 16
+        steps:
+            - uses: actions/download-artifact@v3
+              with:
+                  name: chainlink-plugin-${{ matrix.node }}.js.tar.gz
+                  path: /tmp
+            - run: tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./
+            - run: |
+                  yarn test:black-box
+              shell: bash
