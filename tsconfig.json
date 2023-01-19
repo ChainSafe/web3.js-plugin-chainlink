@@ -17,7 +17,7 @@
 		"declarationMap": true,
 		"strict": true,
 		"strictNullChecks": true,
-		"outDir": "dist",
+		"outDir": "lib",
 		"esModuleInterop": true
 	},
 	"include": ["src/**/*"]
