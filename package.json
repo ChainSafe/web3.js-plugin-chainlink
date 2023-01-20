@@ -1,6 +1,6 @@
 {
 	"name": "@chainsafe/web3.js-chainlink-plugin",
-	"version": "0.1.0",
+	"version": "0.1.0-alpha.0",
 	"description": "A Web3.js 4.x Plugin for Interacting With Chainlink Smart Contracts",
 	"main": "lib/index.js",
 	"repository": {
@@ -11,7 +11,8 @@
 	"license": "LGPL-3.0",
 	"private": false,
 	"files": [
-		"lib/**/*"
+		"lib/**/*",
+		"dist/**/*"
 	],
 	"scripts": {
 		"build": "tsc --build",
