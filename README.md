@@ -19,6 +19,21 @@ yarn add @chainsafe/web3.js-chainlink-plugin
 
 ## Using this plugin
 
+### Installing Version `4.x` of `web3`
+
+When adding version `4.x` of the `web3` package to your project, make sure to use the `@alpha` tag to install the correct version like so:
+
+- `npm i -S web3@alpha`
+- `yarn add web3@alpha`
+
+To verify you have the correct `web3` version installed, after adding the package to your project (the above commands), look at the versions listed in your project's `package.json` under the `dependencies` section, it should contain something similiar to:
+
+```json
+"dependencies": {
+	"web3": "4.0.1-alpha.5"
+}
+```
+
 ### Registering the Plugin with a web3.js Instance
 
 After importing `ChainlinkPlugin` from `@chainsafe/web3.js-chainlink-plugin` and `Web3` from `web3`, register an instance of `ChainlinkPlugin` with an instance of `Web3` like so:
