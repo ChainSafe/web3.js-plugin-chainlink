@@ -1,6 +1,6 @@
-import Web3 from 'web3';
+import { Web3 } from 'web3';
 import { Web3Context } from 'web3-core';
-import Web3Eth from 'web3-eth';
+import { Web3Eth } from 'web3-eth';
 
 import { ChainlinkPlugin } from '../../src/chainlink_plugin';
 import { MainnetPriceFeeds } from '../../src/types';
@@ -33,7 +33,7 @@ describe('ChainlinkPlugin Tests', () => {
 			await web3Context.chainlink.getPrice(MainnetPriceFeeds.LinkEth);
 			expect(requestManagerSendSpy).toHaveBeenCalledWith({
 				method: 'eth_call',
-				params: [{ data: '0xfeaf968c', to: MainnetPriceFeeds.LinkEth }, 'latest'],
+				params: [{ input: '0xfeaf968c', to: MainnetPriceFeeds.LinkEth }, 'latest'],
 			});
 		});
 	});

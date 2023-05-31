@@ -68,17 +68,17 @@
 		"ts-loader": "^9.4.1",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.7.4",
-		"web3": "4.0.1-alpha.5",
-		"web3-core": "4.0.1-alpha.5",
-		"web3-eth": "4.0.1-alpha.5",
+		"web3": "4.0.1-rc.1",
+		"web3-core": "4.0.1-rc.1",
+		"web3-eth": "4.0.1-rc.1",
 		"webpack": "^5.75.0",
 		"webpack-cli": "^5.0.1"
 	},
 	"peerDependencies": {
-		"web3-core": ">= 4.0.1-alpha.5 < 5",
-		"web3-eth": ">= 4.0.1-alpha.5 < 5",
-		"web3-eth-abi": ">= 4.0.1-alpha.5 < 5",
-		"web3-eth-contract": ">= 4.0.1-alpha.5 < 5",
+		"web3-core": ">= 4.0.1-rc.1 < 5",
+		"web3-eth": ">= 4.0.1-rc.1 < 5",
+		"web3-eth-abi": ">= 4.0.1-rc.1 < 5",
+		"web3-eth-contract": ">= 4.0.1-rc.1 < 5",
 		"web3-types": ">= 0.1.1-alpha.4 < 5",
 		"web3-validator": ">= 0.1.1-alpha.5 < 5"
 	}
