@@ -103,6 +103,7 @@ jobs:
                       ~/.cache/Cypress
                   key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
             - run: corepack enable
+            - run: yarn add --no-package-lock --no-save --force cypress
             - name: Cypress run
               uses: cypress-io/github-action@v5
               with:
