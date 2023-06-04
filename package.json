@@ -28,7 +28,7 @@
 		"test": "jest --config=./test/unit/jest.config.js",
 		"test:black-box": "yarn pre-black-box && ./scripts/black_box_test_helpers.sh runTests",
 		"test:coverage": "jest --config=./test/unit/jest.config.js --coverage=true --coverage-reporters=text",
-		"test:e2e:chrome": "npx cypress run --headless --browser chrome --disable-gpu",
+		"test:e2e:chrome": "npx cypress run --headless --browser chrome",
 		"test:e2e:firefox": "npx cypress run --headless --browser firefox",
 		"test:e2e:electron": "npx cypress run --headless --browser electron",
 		"test:unit": "jest --config=./test/unit/jest.config.js"

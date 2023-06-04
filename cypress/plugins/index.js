@@ -21,5 +21,13 @@ const webpackOptions = require('../webpack.config.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
 	on('file:preprocessor', webpackPreprocessor({ webpackOptions }));
+
+	on('before:browser:launch', (browser = {}, launchOptions) => {
+		if (browser.name == 'chrome') {
+			launchOptions.args.push('--disable-gpu');
+		}
+		return launchOptions;
+	});
+
 	return config;
 };
