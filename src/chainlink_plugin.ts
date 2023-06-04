@@ -1,7 +1,6 @@
 import { Web3PluginBase } from 'web3-core';
-import { ContractAbi } from 'web3-eth-abi';
-import Contract from 'web3-eth-contract';
-import { Address } from 'web3-types';
+import { Contract } from 'web3-eth-contract';
+import { Address, ContractAbi } from 'web3-types';
 import { isAddress } from 'web3-validator';
 
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
