@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"baseUrl": "./",
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
 		"target": "es2020",

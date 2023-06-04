@@ -97,12 +97,13 @@ jobs:
                   name: chainlink-plugin-16.js.tar.gz
                   path: /tmp
             - run: tar -xf /tmp/chainlink-plugin-16.js.tar.gz -C ./
-            - uses: actions/cache@v2
+            - uses: actions/cache@v3
               with:
                   path: |
                       ~/.cache/Cypress
                   key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
             - run: corepack enable
+            - run: yarn add --no-package-lock --no-save --force cypress
             - name: Cypress run
               uses: cypress-io/github-action@v5
               with:
