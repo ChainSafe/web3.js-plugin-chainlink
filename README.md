@@ -30,7 +30,7 @@ To verify you have the correct `web3` version installed, after adding the packag
 
 ```json
 "dependencies": {
-	"web3": "4.0.1-rc.1"
+	"web3": "4.0.1-rc.2"
 }
 ```
 
