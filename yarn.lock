@@ -1798,6 +1798,13 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
+"@types/ws@^8.5.4":
+  version "8.5.4"
+  resolved "https://registry.yarnpkg.com/@types%2fws/-/ws-8.5.4.tgz#bb10e36116d6e570dd943735f86c933c1587b8a5"
+  integrity sha512-zdQDHKUgcX/zBc4GrwsE/7dVdAD8JR4EuiAXiiUhhfyIJXXb2+PrGshFyeXWQPMmmZ2XxgaqclgpIC7eTXc1mg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/yargs-parser@*":
   version "21.0.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.0.tgz#0c60e537fa790f5f9472ed2776c2b71ec117351b"
@@ -7449,7 +7456,7 @@ watchpack@^2.4.0:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
 
-web3-core@4.0.1-rc.2, web3-core@^4.0.1-rc.2:
+web3-core@^4.0.1-rc.2:
   version "4.0.1-rc.2"
   resolved "https://registry.yarnpkg.com/web3-core/-/web3-core-4.0.1-rc.2.tgz#87508fe8497c59607975b5fd77ef4443cecac571"
   integrity sha512-FWdP/qypY+fnibv700ABem2eyQcryhUNXpftUo0pZOxkahQJJVjtf+qORF8XdBvmRzKLhZp4+hSI6KrJ/fAsFg==
@@ -7545,7 +7552,7 @@ web3-eth-personal@^4.0.1-rc.2:
     web3-utils "^4.0.1-rc.2"
     web3-validator "^1.0.0-rc.2"
 
-web3-eth@4.0.1-rc.2, web3-eth@^4.0.1-rc.2:
+web3-eth@^4.0.1-rc.2:
   version "4.0.1-rc.2"
   resolved "https://registry.yarnpkg.com/web3-eth/-/web3-eth-4.0.1-rc.2.tgz#f4595f54063ed07b2224eec5f90d564883115d15"
   integrity sha512-U6u4pRbgPspOBrOxsI565H0vEBVcVdpwBGWg8lDFUYFBXkNXA1lUbypsqB1yyGNaAOIIK1ge8/zxEixeAllXrg==

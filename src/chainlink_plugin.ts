@@ -1,13 +1,9 @@
-import { Web3PluginBase } from 'web3-core';
-import { Contract } from 'web3-eth-contract';
-import { Address, ContractAbi } from 'web3-types';
-import { isAddress } from 'web3-validator';
-
+import { Address, Contract, ContractAbi, core as web3Core, validator } from 'web3';
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
-import { Web3Context } from './reexported_web3_context';
 import { GoerliPriceFeeds, MainnetPriceFeeds } from './types';
+import { Web3Context } from './reexported_web3_context';
 
-export class ChainlinkPlugin extends Web3PluginBase {
+export class ChainlinkPlugin extends web3Core.Web3PluginBase {
 	public pluginNamespace: string;
 	public defaultAggregatorInterfaceAbi: ContractAbi;
 
@@ -31,7 +27,7 @@ export class ChainlinkPlugin extends Web3PluginBase {
 		priceFeedAddress: MainnetPriceFeeds | GoerliPriceFeeds | Address,
 		aggregatorInterfaceAbi: ContractAbi = this.defaultAggregatorInterfaceAbi,
 	) {
-		if (!isAddress(priceFeedAddress)) {
+		if (!validator.isAddress(priceFeedAddress)) {
 			throw new Error(
 				`Provided priceFeedAddress is not a valid address: ${priceFeedAddress}`,
 			);
