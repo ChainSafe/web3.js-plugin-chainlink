@@ -62,10 +62,10 @@ jobs:
         steps:
             - uses: actions/download-artifact@v3
               with:
-                  name: chainlink-plugin-14.js.tar.gz
+                  name: chainlink-plugin-18.js.tar.gz
                   path: /tmp
             - run: corepack enable
-            - run: tar -xf /tmp/chainlink-plugin-14.js.tar.gz -C ./
+            - run: tar -xf /tmp/chainlink-plugin-18.js.tar.gz -C ./
             - run: yarn lint
     unit:
         name: Unit Tests
