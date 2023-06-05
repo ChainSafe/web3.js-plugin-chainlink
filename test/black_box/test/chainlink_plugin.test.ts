@@ -24,7 +24,7 @@ describe('ChainlinkPlugin Tests', () => {
 		let requestManagerSendSpy: jest.SpyInstance;
 
 		beforeAll(() => {
-			web3Context = new Web3('https://rpc.ankr.com/eth');
+			web3Context = new Web3('https://eth.public-rpc.com');
 			web3Context.registerPlugin(new ChainlinkPlugin());
 			requestManagerSendSpy = jest.spyOn(web3Context.chainlink.requestManager, 'send');
 		});
