@@ -24,13 +24,34 @@ describe('ChainlinkPlugin Tests', () => {
 		let requestManagerSendSpy: jest.SpyInstance;
 
 		beforeAll(() => {
-			web3Context = new Web3('https://rpc.ankr.com/eth');
+			web3Context = new Web3();
 			web3Context.registerPlugin(new ChainlinkPlugin());
 			requestManagerSendSpy = jest.spyOn(web3Context.chainlink.requestManager, 'send');
 		});
 
 		it('should call ChainlinkPlugin.getPrice with expected RPC object', async () => {
-			const result = await web3Context.chainlink.getPrice(MainnetPriceFeeds.LinkEth);
+			const providers = [
+				'https://eth.public-rpc.com',
+				'https://nodes.mewapi.io/rpc/eth',
+				'https://ethereum.publicnode.com',
+				'https://rpc.ankr.com/eth',
+				'https://rpc.flashbots.net/',
+			];
+			let result: unknown;
+			let counter = 0;
+			do {
+				try {
+					web3Context.setProvider(providers[counter]);
+					// eslint-disable-next-line no-await-in-loop
+					result = await web3Context.chainlink.getPrice(MainnetPriceFeeds.LinkEth);
+				} catch (error) {
+					counter += 1;
+				}
+			} while (!result && counter < providers.length);
+
+			if (!result) {
+				throw new Error('It seems all Providers endpoints, used for the test, had issues');
+			}
 			expect(Object.keys(result as object)).toEqual(
 				expect.arrayContaining([
 					'roundId',
