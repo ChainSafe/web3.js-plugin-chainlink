@@ -58,4 +58,21 @@ declare module './reexported_web3_context' {
 	}
 }
 
+// Module Augmentation
+declare module 'web3-core' {
+	interface Web3Context {
+		chainlink: ChainlinkPlugin;
+	}
+}
+
+// Module Augmentation
+declare module 'web3' {
+	// eslint-disable-next-line @typescript-eslint/prefer-namespace-keyword, @typescript-eslint/no-namespace
+	module core {
+		interface Web3Context {
+			chainlink: ChainlinkPlugin;
+		}
+	}
+}
+
 export { Web3Context };
