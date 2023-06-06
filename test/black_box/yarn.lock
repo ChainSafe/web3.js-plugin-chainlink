@@ -2764,7 +2764,7 @@ web3-validator@^1.0.0-rc.2:
     web3-errors "^1.0.0-rc.2"
     web3-types "^1.0.0-rc.2"
 
-web3@4.0.1-rc.2:
+web3@^4.0.1-rc.2:
   version "4.0.1-rc.2"
   resolved "https://registry.yarnpkg.com/web3/-/web3-4.0.1-rc.2.tgz#91a0927885a1f1af46a126ea902428ee58f4c235"
   integrity sha512-3uFbNUMyj+f1PM7ZXZAie26uStCh67ASZrv2tezPauyoQiP9SEUiyjX4pdaQdQNmRFuy0pk4uh9Zrg5vCIxeQQ==
