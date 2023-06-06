@@ -298,8 +298,7 @@
 
 "@chainsafe/web3.js-chainlink-plugin@^9.9.9":
   version "9.9.9"
-  resolved "https://registry.yarnpkg.com/@chainsafe%2fweb3.js-chainlink-plugin/-/web3.js-chainlink-plugin-9.9.9.tgz#12c91426bdb338c59b69aec9048f410e033c4059"
-  integrity "sha1-yetHCSJwANEKy337+cPSJjgO+h8= sha512-rlCXWlDspEE+cb0E5/pviC9YtvRqwOCQok5EqPgTXWy7xWfdi5t2YvWQ8wSU4lW1nbVYBWjTPjuqRVKwXMM3pA=="
+resolved "http://localhost:4873/@chainsafe%2fweb3.js-chainlink-plugin/-/web3.js-chainlink-plugin-9.9.9.tgz#12c91426bdb338c59b69aec9048f410e033c4059"
 
 "@ethereumjs/rlp@^4.0.1":
   version "4.0.1"
