@@ -1,7 +1,7 @@
 # Web3.js Chainlink Plugin
 
 ![ES Version](https://img.shields.io/badge/ES-2020-yellow)
-![Node Version](https://img.shields.io/badge/node-14.x-green)
+![Node Version](https://img.shields.io/badge/node-18.x-green)
 [![NPM Package][npm-image]][npm-url]
 
 This is a [web3.js](https://github.com/web3/web3.js) `4.x` plugin for interacting with Chainlink Ethereum contracts.
@@ -21,16 +21,19 @@ yarn add @chainsafe/web3.js-chainlink-plugin
 
 ### Installing Version `4.x` of `web3`
 
-When adding version `4.x` of the `web3` package to your project, make sure to use the `@alpha` tag to install the correct version like so:
+When adding the `web3` package to your project, make sure to use version `4.x`. You can append `@4.0.1-rc.2` tag to install RC2 of version 4:
 
--   `npm i -S web3@alpha`
--   `yarn add web3@alpha`
+-   `npm i -S web3@4.0.1-rc.2`
+-   `yarn add web3@4.0.1-rc.2`
 
-To verify you have the correct `web3` version installed, after adding the package to your project (the above commands), look at the versions listed in your project's `package.json` under the `dependencies` section, it should contain something similiar to:
+> **_NOTE_**  
+> If 4.x was already released, you are good to just use `web3` without appending anything to it.
+
+To verify you have the correct `web3` version installed, after adding the package to your project (the above commands), look at the versions listed in your project's `package.json` under the `dependencies` section, it should contain version 4.x similar to:
 
 ```json
 "dependencies": {
-	"web3": "4.0.1-rc.1"
+	"web3": "4.0.1-rc.2"
 }
 ```
 
