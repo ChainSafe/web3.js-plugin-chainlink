@@ -1,8 +1,8 @@
-import { Address, Contract, ContractAbi, core as web3Core, validator } from 'web3';
+import { Address, Contract, ContractAbi, Web3PluginBase, validator } from 'web3';
 import { AggregatorV3InterfaceABI } from './aggregator_v3_interface_abi';
 import { GoerliPriceFeeds, MainnetPriceFeeds } from './types';
 
-export class ChainlinkPlugin extends web3Core.Web3PluginBase {
+export class ChainlinkPlugin extends Web3PluginBase {
 	public pluginNamespace: string;
 	public defaultAggregatorInterfaceAbi: ContractAbi;
 
@@ -51,7 +51,7 @@ export class ChainlinkPlugin extends web3Core.Web3PluginBase {
 }
 
 // Module Augmentation
-declare module 'web3-core' {
+declare module 'web3' {
 	interface Web3Context {
 		chainlink: ChainlinkPlugin;
 	}
