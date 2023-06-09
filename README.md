@@ -21,10 +21,10 @@ yarn add @chainsafe/web3.js-chainlink-plugin
 
 ### Installing Version `4.x` of `web3`
 
-When adding the `web3` package to your project, make sure to use version `4.x`. You can append `@4.0.1-rc.2` tag to install RC2 of version 4:
+When adding the `web3` package to your project, make sure to use version `4.x`. You can append `@4.0.2-dev.af57eae.0` tag to install the latest version of 4 that this plugin was tested with:
 
--   `npm i -S web3@4.0.1-rc.2`
--   `yarn add web3@4.0.1-rc.2`
+-   `npm i -S web3@4.0.2-dev.af57eae.0`
+-   `yarn add web3@4.0.2-dev.af57eae.0`
 
 > **_NOTE_**  
 > If 4.x was already released, you are good to just use `web3` without appending anything to it.
@@ -33,7 +33,7 @@ To verify you have the correct `web3` version installed, after adding the packag
 
 ```json
 "dependencies": {
-	"web3": "4.0.1-rc.2"
+	"web3": "4.0.2-dev.af57eae.0"
 }
 ```
 

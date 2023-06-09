@@ -1,4 +1,4 @@
-import { core, Web3, Web3Eth } from 'web3';
+import { Web3, Web3Context, Web3Eth } from 'web3';
 
 // https://github.com/ChainSafe/web3.js-plugin-chainlink/issues/15
 // @ts-ignore
@@ -6,7 +6,13 @@ import { ChainlinkPlugin, MainnetPriceFeeds } from '@chainsafe/web3.js-chainlink
 
 describe('ChainlinkPlugin Tests', () => {
 	it('should register ChainlinkPlugin plugin on Web3Context instance', () => {
-		const web3Context = new core.Web3Context('http://127.0.0.1:8545');
+		const web3Context = new Web3Context('http://127.0.0.1:8545');
+		web3Context.registerPlugin(new ChainlinkPlugin());
+		expect(web3Context.chainlink).toBeDefined();
+	});
+
+	it('should register ChainlinkPlugin plugin on Web3Context instance', () => {
+		const web3Context = new Web3Context('http://127.0.0.1:8545');
 		web3Context.registerPlugin(new ChainlinkPlugin());
 		expect(web3Context.chainlink).toBeDefined();
 	});
