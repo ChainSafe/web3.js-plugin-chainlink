@@ -7458,7 +7458,7 @@ watchpack@^2.4.0:
 
 web3-core@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-core/-/web3-core-4.0.2-dev.af57eae.0.tgz#56528fd82caf54975ad1cb38f037e410054e3d09"
+  resolved "https://registry.yarnpkg.com/web3-core/-/web3-core-4.0.2-dev.af57eae.0.tgz#56528fd82caf54975ad1cb38f037e410054e3d09"
   integrity sha512-bZ2fvi9VMdjK/cA3TM5c/wZ6TFqThcvjaBOb5liWvye2Qbuw4SG8eDLFmducXAy2K6fMatzuw2A6ohDhgYlYEw==
   dependencies:
     web3-errors "1.0.1-dev.af57eae.0+af57eae"
@@ -7473,14 +7473,14 @@ web3-core@4.0.2-dev.af57eae.0+af57eae:
 
 web3-errors@1.0.1-dev.af57eae.0+af57eae:
   version "1.0.1-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-errors/-/web3-errors-1.0.1-dev.af57eae.0.tgz#7e14477040534850adcd6eeff6fdffb948ff4471"
+  resolved "https://registry.yarnpkg.com/web3-errors/-/web3-errors-1.0.1-dev.af57eae.0.tgz#7e14477040534850adcd6eeff6fdffb948ff4471"
   integrity sha512-dwGUEt7Ijkqh48TPzVGNWH4i7MYBYWhnRlQa8A+9vNPAcq/tJpfSVVBk4gsaB7MXiIGmONp0QibcVmTNNzeCZw==
   dependencies:
     web3-types "1.0.1-dev.af57eae.0+af57eae"
 
 web3-eth-abi@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-abi/-/web3-eth-abi-4.0.2-dev.af57eae.0.tgz#d778986071d8f9985272e1db587c466ec057c5ac"
+  resolved "https://registry.yarnpkg.com/web3-eth-abi/-/web3-eth-abi-4.0.2-dev.af57eae.0.tgz#d778986071d8f9985272e1db587c466ec057c5ac"
   integrity sha512-SvtQL0BCnRnCKL5zuhrJTTDD2mFu2CkDkR0altOiVaXz3UL8aEnFVwOWeBanOmzlWoR60M69d9qylCvGFI6mmw==
   dependencies:
     "@ethersproject/abi" "^5.7.0"
@@ -7491,7 +7491,7 @@ web3-eth-abi@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth-accounts@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-accounts/-/web3-eth-accounts-4.0.2-dev.af57eae.0.tgz#d071cdb0a8db0e2fb88e87ab635ab1cdaef8614a"
+  resolved "https://registry.yarnpkg.com/web3-eth-accounts/-/web3-eth-accounts-4.0.2-dev.af57eae.0.tgz#d071cdb0a8db0e2fb88e87ab635ab1cdaef8614a"
   integrity sha512-FXxJHtmMwSE02xvcGV/OJSNkyaYkbjcbE7qQ5n2ZG4ZDKua+RVLsH/3IqDuXZlqzBi5GM13e624i9MxtLPCmEA==
   dependencies:
     "@ethereumjs/rlp" "^4.0.1"
@@ -7504,7 +7504,7 @@ web3-eth-accounts@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth-contract@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-contract/-/web3-eth-contract-4.0.2-dev.af57eae.0.tgz#dbfc6332dca674b8328fcad6435f69eb6cb06d76"
+  resolved "https://registry.yarnpkg.com/web3-eth-contract/-/web3-eth-contract-4.0.2-dev.af57eae.0.tgz#dbfc6332dca674b8328fcad6435f69eb6cb06d76"
   integrity sha512-yOKCTHbWI0CcEQR0XkGQ/jlE+Lg36mCwgaJqd3PvHvXjUGQ2IgDhRLFfDq2+KI2GSiAMDp+qyKedgLuC1WgoYg==
   dependencies:
     web3-core "4.0.2-dev.af57eae.0+af57eae"
@@ -7517,7 +7517,7 @@ web3-eth-contract@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth-ens@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-ens/-/web3-eth-ens-4.0.2-dev.af57eae.0.tgz#3b8963dd9357f04f371f4cf3477e4519d432bc68"
+  resolved "https://registry.yarnpkg.com/web3-eth-ens/-/web3-eth-ens-4.0.2-dev.af57eae.0.tgz#3b8963dd9357f04f371f4cf3477e4519d432bc68"
   integrity sha512-AreiZMr2xfzJ0Fgmgs81rTi/rIMGqpT/ad1r5L9tAmEvU44NR1MdglbVoZEi6LaEKPQGJ73eQK7zauP0g3GkdA==
   dependencies:
     "@adraffy/ens-normalize" "^1.8.8"
@@ -7532,7 +7532,7 @@ web3-eth-ens@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth-iban@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-iban/-/web3-eth-iban-4.0.2-dev.af57eae.0.tgz#38d58304bf860bedf569a2a11da95d50b035e4ff"
+  resolved "https://registry.yarnpkg.com/web3-eth-iban/-/web3-eth-iban-4.0.2-dev.af57eae.0.tgz#38d58304bf860bedf569a2a11da95d50b035e4ff"
   integrity sha512-IIJca/J1KVYbWRWKq460ZisFeVVJBI/kdXS2bhcRsC4CEW/zPvJIDdV7eBCIm4iqD0iRQnN0aaXKoQuT+ye38g==
   dependencies:
     web3-errors "1.0.1-dev.af57eae.0+af57eae"
@@ -7542,7 +7542,7 @@ web3-eth-iban@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth-personal@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth-personal/-/web3-eth-personal-4.0.2-dev.af57eae.0.tgz#678370e74f5af7305d1a6e4f5a59541dec8f554a"
+  resolved "https://registry.yarnpkg.com/web3-eth-personal/-/web3-eth-personal-4.0.2-dev.af57eae.0.tgz#678370e74f5af7305d1a6e4f5a59541dec8f554a"
   integrity sha512-bfNVJmSpDsInVYK2Rpg7OPZzvIFcLR8aHd/YZ/QaamCsA0geXIuf8g/fsil6New8nGfB+qpzv2Or/zaIs23u3Q==
   dependencies:
     web3-core "4.0.2-dev.af57eae.0+af57eae"
@@ -7554,7 +7554,7 @@ web3-eth-personal@4.0.2-dev.af57eae.0+af57eae:
 
 web3-eth@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-eth/-/web3-eth-4.0.2-dev.af57eae.0.tgz#872ef4f968bd8c54770895a266729926751e613b"
+  resolved "https://registry.yarnpkg.com/web3-eth/-/web3-eth-4.0.2-dev.af57eae.0.tgz#872ef4f968bd8c54770895a266729926751e613b"
   integrity sha512-O0uuu2dFvrkkdEOKSOBAYfckEmcvefqW6r1KJ+Z5tN2YmEjmzAV2c9wL+1Hp+qnkev3v0LPtxdXljLG9MCJBPw==
   dependencies:
     setimmediate "^1.0.5"
@@ -7571,7 +7571,7 @@ web3-eth@4.0.2-dev.af57eae.0+af57eae:
 
 web3-net@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-net/-/web3-net-4.0.2-dev.af57eae.0.tgz#e9821a84f687ec9704f84fb21d1f9be40a9a157b"
+  resolved "https://registry.yarnpkg.com/web3-net/-/web3-net-4.0.2-dev.af57eae.0.tgz#e9821a84f687ec9704f84fb21d1f9be40a9a157b"
   integrity sha512-iHaItA1wWtOESYFkZaQSrSfb8xd1ycPz0OxkkHTx7zlhiS7Z5u29xGQp/TqC7+udXPvRHFuZlRt28VSG1ehkng==
   dependencies:
     web3-core "4.0.2-dev.af57eae.0+af57eae"
@@ -7581,7 +7581,7 @@ web3-net@4.0.2-dev.af57eae.0+af57eae:
 
 web3-providers-http@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-providers-http/-/web3-providers-http-4.0.2-dev.af57eae.0.tgz#05d612957826416590227152ac4beb66f873045b"
+  resolved "https://registry.yarnpkg.com/web3-providers-http/-/web3-providers-http-4.0.2-dev.af57eae.0.tgz#05d612957826416590227152ac4beb66f873045b"
   integrity sha512-0TAlMdSH36Kp6WsbVxpZ4Ml8mUSrXGabqw8zEDMIX3xb7SDibbYWzMiIpyc85h2j5RcH/OS+F0MS4gbLDf+gfA==
   dependencies:
     cross-fetch "^3.1.5"
@@ -7591,7 +7591,7 @@ web3-providers-http@4.0.2-dev.af57eae.0+af57eae:
 
 web3-providers-ipc@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-providers-ipc/-/web3-providers-ipc-4.0.2-dev.af57eae.0.tgz#c982f67f220ec749d21a431ee90b2eeb80aef225"
+  resolved "https://registry.yarnpkg.com/web3-providers-ipc/-/web3-providers-ipc-4.0.2-dev.af57eae.0.tgz#c982f67f220ec749d21a431ee90b2eeb80aef225"
   integrity sha512-V1gDRA8Gv8vXgiBPQ4XIb+ruMunKcIV8eCmPU2NAN3rw7VyMrPS8Wbi7LNEV5V2x7MbJvhHDephoCX1zsDTR7w==
   dependencies:
     web3-errors "1.0.1-dev.af57eae.0+af57eae"
@@ -7600,7 +7600,7 @@ web3-providers-ipc@4.0.2-dev.af57eae.0+af57eae:
 
 web3-providers-ws@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-providers-ws/-/web3-providers-ws-4.0.2-dev.af57eae.0.tgz#089b0037da5d1f7fb4238d39dcd8942f63636dc3"
+  resolved "https://registry.yarnpkg.com/web3-providers-ws/-/web3-providers-ws-4.0.2-dev.af57eae.0.tgz#089b0037da5d1f7fb4238d39dcd8942f63636dc3"
   integrity sha512-7fq5EgTRocYSe2/WdJ+piXtEViTDfDPTmKgmUSovfDSGbOWAaK9h7t6ImmVhPXcVQ7lTYtmCu23zmLagpL3WIQ==
   dependencies:
     isomorphic-ws "^5.0.0"
@@ -7611,7 +7611,7 @@ web3-providers-ws@4.0.2-dev.af57eae.0+af57eae:
 
 web3-rpc-methods@1.0.1-dev.af57eae.0+af57eae:
   version "1.0.1-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-rpc-methods/-/web3-rpc-methods-1.0.1-dev.af57eae.0.tgz#c217e42aaeb40350c678e92bfa9768652173472a"
+  resolved "https://registry.yarnpkg.com/web3-rpc-methods/-/web3-rpc-methods-1.0.1-dev.af57eae.0.tgz#c217e42aaeb40350c678e92bfa9768652173472a"
   integrity sha512-dmydQLb0H5y3fmehsqojIU9kAszwn1XSP17SdnkALOpQwtoO6H9il/TOjvLlOfHIkLEBDZmSrTxbHbVTY/ntHg==
   dependencies:
     web3-core "4.0.2-dev.af57eae.0+af57eae"
@@ -7620,12 +7620,12 @@ web3-rpc-methods@1.0.1-dev.af57eae.0+af57eae:
 
 web3-types@1.0.1-dev.af57eae.0+af57eae:
   version "1.0.1-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-types/-/web3-types-1.0.1-dev.af57eae.0.tgz#f754fd5d21eae310084e1a702dcc48c1dc2aadcc"
+  resolved "https://registry.yarnpkg.com/web3-types/-/web3-types-1.0.1-dev.af57eae.0.tgz#f754fd5d21eae310084e1a702dcc48c1dc2aadcc"
   integrity sha512-PNw/mblhx01h2FsMClAaDeYeAcXFNQr6H8NZSvlRsjbT55G9ihoYWIT8baSRy+aZLtK/zTy6SogON3n8sZYOcg==
 
 web3-utils@4.0.2-dev.af57eae.0+af57eae:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-utils/-/web3-utils-4.0.2-dev.af57eae.0.tgz#65978cdf2176ff4f15987ecb6488ce9a83272696"
+  resolved "https://registry.yarnpkg.com/web3-utils/-/web3-utils-4.0.2-dev.af57eae.0.tgz#65978cdf2176ff4f15987ecb6488ce9a83272696"
   integrity sha512-jC1gJ8rIDEQL5vACu6Npb2K0reLe86rSDMKxGdj2m0Ksm5pq6BBR2MxfKF/uCMOhlMMXofeVFD4+BfTnYLJ7pg==
   dependencies:
     ethereum-cryptography "^2.0.0"
@@ -7635,7 +7635,7 @@ web3-utils@4.0.2-dev.af57eae.0+af57eae:
 
 web3-validator@1.0.1-dev.af57eae.0+af57eae:
   version "1.0.1-dev.af57eae.0"
-  resolved "http://localhost:4873/web3-validator/-/web3-validator-1.0.1-dev.af57eae.0.tgz#58ae55810ddb87da0d0bf1c3bb03f7bbc24dd669"
+  resolved "https://registry.yarnpkg.com/web3-validator/-/web3-validator-1.0.1-dev.af57eae.0.tgz#58ae55810ddb87da0d0bf1c3bb03f7bbc24dd669"
   integrity sha512-9eiDzrBp5PrOOOpIlkkLKuWR1C0J4ea6/7WPQ9JOw4xvDeIShRKYujtxozxIYTETM8gq2Fx1wAkWUwvtAF9cHA==
   dependencies:
     ethereum-cryptography "^2.0.0"
@@ -7646,7 +7646,7 @@ web3-validator@1.0.1-dev.af57eae.0+af57eae:
 
 web3@^4.0.2-dev.af57eae.0:
   version "4.0.2-dev.af57eae.0"
-  resolved "http://localhost:4873/web3/-/web3-4.0.2-dev.af57eae.0.tgz#b42ad2d99111a43e74098379de37a2ca68ffffc1"
+  resolved "https://registry.yarnpkg.com/web3/-/web3-4.0.2-dev.af57eae.0.tgz#b42ad2d99111a43e74098379de37a2ca68ffffc1"
   integrity sha512-DSBrW34h4vzbklUj3lEIhPglcBdRQHtt/SV8/lsMRmhiDVGVeIigOwTdGl1LiPjwTp+kk/v0xnX88BXKXHNWNA==
   dependencies:
     web3-core "4.0.2-dev.af57eae.0+af57eae"
