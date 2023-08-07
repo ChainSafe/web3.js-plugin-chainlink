@@ -1,12 +1,10 @@
 name: Test
 on:
-    pull_request:
+    push:
         branches:
             - master
-        types:
-            - opened
-            - reopened
-            - synchronize
+    pull_request:
+            
 jobs:
     build:
         name: Build TSC
@@ -40,18 +38,17 @@ jobs:
         name: Build Webpack
         needs: build
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node:
-                    - 16
-                    - 18
         steps:
+            - uses: actions/setup-node@v3
+              with:
+                node-version: 18
+                cache: yarn
             - uses: actions/download-artifact@v3
               with:
-                  name: 'chainlink-plugin-${{ matrix.node }}.js.tar.gz'
+                  name: 'chainlink-plugin-18.js.tar.gz'
                   path: /tmp
             - run: corepack enable
-            - run: 'tar -xf /tmp/chainlink-plugin-${{ matrix.node }}.js.tar.gz -C ./'
+            - run: 'tar -xf /tmp/chainlink-plugin-18.js.tar.gz -C ./'
             - run: 'yarn build:web'
     lint:
         name: lint
