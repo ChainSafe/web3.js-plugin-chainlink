@@ -39,10 +39,6 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-node@v3
-              with:
-                node-version: 18
-                cache: yarn
             - uses: actions/download-artifact@v3
               with:
                   name: 'chainlink-plugin-18.js.tar.gz'
