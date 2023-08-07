@@ -46,4 +46,6 @@ jobs:
           echo npmAuthToken: "$NODE_AUTH_TOKEN" >> ./.yarnrc.yml
           
       - run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.releases_created }}
