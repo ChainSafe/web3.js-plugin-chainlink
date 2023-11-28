@@ -14,7 +14,7 @@ This is a [web3.js](https://github.com/web3/web3.js) `4.x` plugin for interactin
 ## Installation
 
 ```bash
-yarn add @chainsafe/web3.js-chainlink-plugin
+yarn add "@chainsafe/web3-plugin-chainlink"
 ```
 
 ## Using this plugin
