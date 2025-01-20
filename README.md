@@ -1,5 +1,8 @@
 # Web3.js Chainlink Plugin
 
+#### Web3.js libraries are being sunset on March 4th, 2025. For migration guides and more details please refer to [Chainsafe blog](https://blog.chainsafe.io/web3-js-sunset/)
+
+
 ![ES Version](https://img.shields.io/badge/ES-2020-yellow)
 ![Node Version](https://img.shields.io/badge/node-18.x-green)
 [![NPM Package][npm-image]][npm-url]
