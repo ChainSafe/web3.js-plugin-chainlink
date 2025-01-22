@@ -54,7 +54,7 @@ const chainlinkPlugin = new ChainlinkPlugin();
 web3.registerPlugin(chainlinkPlugin);
 ```
 
-More information about registering web3.js plugins can be found [here](https://docs.web3js.org/docs/guides/web3_plugin_guide/plugin_users#registering-the-plugin).
+More information about registering web3.js plugins can be found [here](https://docs.web3js.org/guides/web3_plugin_guide/plugin_authors/).
 
 ### Plugin Methods
 
